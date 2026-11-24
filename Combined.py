@@ -1,3 +1,4 @@
+import os
 import cv2
 import mediapipe as mp
 import pyautogui as pg
@@ -8,7 +9,7 @@ import google.generativeai as genai
 from PIL import Image
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyBebcAjKepIE1jwiw13kpBVykOO_opbwNU")
+genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 # Streamlit UI setup
